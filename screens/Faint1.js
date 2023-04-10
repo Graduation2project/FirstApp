@@ -2,11 +2,15 @@ import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
 import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput,TouchableOpacity } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+
+
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import SpeakerComponent from '../Navigation/SpeakerComponent';
 export default class Faint1 extends React.Component {
 
   constructor() {
     super();
+    this.callref = React.createRef()
     this.state = {
       text: ""
 
@@ -104,7 +108,7 @@ export default class Faint1 extends React.Component {
             justifyContent: 'center',
           }}>
 
-            <View style={{
+            <View ref={this.callref} style={{
               width:"80%",
               paddingVertical: 20,
               backgroundColor: "#39A9B3",
@@ -112,15 +116,15 @@ export default class Faint1 extends React.Component {
               ,borderRadius:10
             }}>
 
-              <FontAwesome5 name='volume-up' size={30} style={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
+              <SpeakerComponent styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} Custom_ref={this.callref} />
               <Text style={{fontSize:20}}>اختر العمر المناسب للمريض:-</Text>
               <View style={{width:"100%",flexDirection:"row",marginTop:"3%",justifyContent:"space-around"}}>
 
-              <TouchableOpacity onPress={() => {this.props.navigation.navigate("Chbreath",{key:51})}} style={{width:"25%",alignItems:'center',justifyContent:'center'}}>
+              <TouchableOpacity onPress={() => {this.props.navigation.navigate("ChildVitalSigns")}} style={{width:"25%",alignItems:'center',justifyContent:'center'}}>
                 <Image source={require("../images/child.png")} style={{ height: 70, width:70}}/>
               </TouchableOpacity>  
 
-              <TouchableOpacity onPress={() => {this.props.navigation.navigate("Faint2",{key:51})}} style={{width:"25%",alignItems:'center',justifyContent:'center'}}>
+              <TouchableOpacity onPress={() => {this.props.navigation.navigate("AdultCheck")}} style={{width:"25%",alignItems:'center',justifyContent:'center'}}>
                 <Image source={require("../images/adult.png")} style={{ height: 70, width:70}}/>
               </TouchableOpacity> 
 

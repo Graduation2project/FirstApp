@@ -3,10 +3,12 @@ import * as React from 'react'
 import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput,TouchableOpacity } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import SpeakerComponent from '../Navigation/SpeakerComponent';
 export default class HeartAttackQuestion extends React.Component {
 
   constructor() {
     super();
+    this.callref = React.createRef()
     this.state = {
       text: ""
 
@@ -104,7 +106,7 @@ export default class HeartAttackQuestion extends React.Component {
             justifyContent: 'center',
           }}>
 
-            <View style={{
+            <View ref={this.callref} style={{
               width:"80%",
               paddingVertical: 20,
               backgroundColor: "#39A9B3",
@@ -112,7 +114,7 @@ export default class HeartAttackQuestion extends React.Component {
               ,borderRadius:10
             }}>
 
-              <FontAwesome5 name='volume-up' size={30} style={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
+              <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
               <Text style={{fontSize:20}}>هل تشعر بألم فى الصدر اتجاه القلب؟</Text>
               <Text style={{fontSize:20}}>هل يوجد ألم فى الكتف؟</Text>
 

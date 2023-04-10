@@ -43,7 +43,7 @@ export default class Home extends React.Component {
 
             <View style={{ flexDirection: "column", marginTop: 10 }}>
               <View style={{ width: "100%", flexDirection: "row", marginTop: 10, justifyContent: "space-around", alignItems: "center" }}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate( this.props.LearningState ? "Faintinglearn" : "Faint")} style={{ height: 120, width: "45%", backgroundColor: "#fff", borderWidth: .5, justifyContent: "center", alignItems: "center" }}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate( this.props.LearningState ? "Faintinglearn" : "Faint2")} style={{ height: 120, width: "45%", backgroundColor: "#fff", borderWidth: .5, justifyContent: "center", alignItems: "center" }}>
                   <Image source={require("../images/الاغماء.png")} style={{ height:80, width: 80, borderRadius: 50 }}></Image>
                   <Text style={{ color: "#000", fontSize: 14, fontWeight: "bold" }}>   الاغماء</Text>
                 </TouchableOpacity>

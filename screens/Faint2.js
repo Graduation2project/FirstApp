@@ -4,43 +4,57 @@ import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import RadioGroup from 'react-native-radio-buttons-group';
+import SpeakerComponent from '../Navigation/SpeakerComponent';
 export default class Faint2 extends React.Component {
 
 constructor(props){
   super(props)
+  this.callref = React.createRef()
      this.state = {                     
          radioButtons: [
               {
                  id: '1', // acts as primary key, should be unique and non-empty string
                  label:'يقظ ولكن يشعر بالدوران' ,
+                 PageName : "Faint3",
                  value: 'Arabic'
               },
               {
                 id: '2',
                 label: 'يستجيب للكلام',
+                PageName : "Faint3",
                 value: 'Arabic'
               },
               {
                 id: '3',
                 label: 'يستجيب للوخز',
+                PageName : "Faint3",
                 value: 'Arabic'
               },
               {
                 id: '4',
                 label: 'لا يستجيب',
+                PageName : "Faint",
                 value: 'Arabic'
               }
                       ]
-}}
+}
+
+
+
+}
 onPressRadioButton = (radioButtonsArray) => {
-//  console.log(this.props.route.params)
-this.setState({radioButtons: radioButtonsArray});
+  var selected = radioButtonsArray.find(radio => radio.selected);
+  this.props.navigation.navigate(selected.PageName)
+//this.setState({radioButtons: radioButtonsArray});
 }
 
   render() {
     
     return (
       <>
+      <Text style={{ display:"none"}} ref={this.callref}>{this.state.radioButtons.reduce( (acc , curr) => acc + curr.label,"") }</Text>
+
+
         <View style={{ backgroundColor: "#fff", flex: 1 }}>
           <View style={{ backgroundColor: "#fff", flex: 1 }}>
             <View style={{ width: "100%", height:50 , alignSelf: "center", marginTop: 20, paddingHorizontal: "2.5%", flexDirection: 'row' }}>
@@ -135,12 +149,13 @@ this.setState({radioButtons: radioButtonsArray});
               borderRadius:10
              ,justifyContent:"center"
             }}>
-
-            <FontAwesome5 name='volume-up' size={30} style={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
+              <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
+            {/* <FontAwesome5 name='volume-up' size={30} style= /> */}
              <RadioGroup 
             radioButtons={this.state.radioButtons} 
-           // onPress={this.onPressRadioButton} 
-           onPress={ ( ) => this.props.navigation.navigate("Faint3")}
+         
+            onPress={this.onPressRadioButton} 
+          // onPress={ ( ) => this.props.navigation.navigate("Faint3")}
             layout='column'
             style={styles.radio}
              />

@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import { Video } from 'expo-av';
+import CustomVideoPlayer from '../Navigation/CustomVideoPlayer'
+import SpeakerComponent from '../Navigation/SpeakerComponent'
 
  const { width, height } = Dimensions.get('window')
 export default function CprChild ({navigation}) {
@@ -12,6 +14,7 @@ export default function CprChild ({navigation}) {
  
  
     const video = React.useRef(null);
+    const speakerRef = React.useRef()
     const [status, setStatus] = React.useState({});
 
 
@@ -39,11 +42,10 @@ export default function CprChild ({navigation}) {
           
           }}>
          
-         <ScrollView>
+         <ScrollView ref={speakerRef}>
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
               <Text style={styles.titel}>*الاجراءات :-</Text>
-              <FontAwesome5 name='volume-up'
-                size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+              <SpeakerComponent Custom_ref={speakerRef} />
             </View>
               
             <Text style={styles.text}>.قم باستخدام يدك الأقوى ثم قم بالضغط فى منتصف صدر الطفل 30ضغطة</Text>
@@ -58,17 +60,9 @@ export default function CprChild ({navigation}) {
                  pauseOnPress={true}
                   style={{marginTop:"8%"}}/>  */}
                 <View style={styles.container}>
-                <Video
-                  ref={video}
-                  style={styles.video}
-                  source={
-                    require("../videos/child2_cpr.mp4")
-                  }
-                  useNativeControls
-                  resizeMode="contain"
-                  isLooping
-                  onPlaybackStatusUpdate={status => setStatus(() => status)}
-                />
+
+                  <CustomVideoPlayer styles={{height:200}} vid_url={ require("../videos/child2_cpr.mp4")}  />
+               
                 {/* <View style={styles.buttons}>
                   <Button
                     title={status.isPlaying ? 'Pause' : 'Play'}

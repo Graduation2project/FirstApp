@@ -1,14 +1,16 @@
 ////////////////////////////كسر في الاطراف كالذراع والقدم //////////////////////
 import * as React from 'react'
-import { Video } from 'expo-av';
+
 import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+
+import SpeakerComponent from './../Navigation/SpeakerComponent';
+import CustomVideoPlayer from './../Navigation/CustomVideoPlayer';
 const { width, height } = Dimensions.get('window')
 export default function Foot () {
 
-  const video = React.useRef(null);
+
+  const callref = React.useRef();
   const [status, setStatus] = React.useState({});
   
     return (
@@ -27,7 +29,7 @@ export default function Foot () {
 
           </View>
 
-          <View style={{
+          <View ref={callref} style={{
             position: "absolute",
             width: "100%",
             height: height - 68,
@@ -40,8 +42,7 @@ export default function Foot () {
 
               <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
                 <Text style={styles.titel}>* الكسر في الاطراف كالذراع والقدم :-</Text>
-                <FontAwesome5 name='volume-up'
-                  size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+                <SpeakerComponent Custom_ref={callref}  />
               </View>
 
 
@@ -71,29 +72,17 @@ export default function Foot () {
 
 
            
-              <Video
-                  ref={video}
-                  style={{ marginTop: '5%' , width:"100%" ,  height:200}}
-                  source={
-                    require("../videos/foot.mp4")
-                  }
-                  useNativeControls
-                  isLooping
-                  resizeMode="contain"
-                  onPlaybackStatusUpdate={status => setStatus(() => status)}
+              <CustomVideoPlayer
+                  vid_url={require("../videos/foot.mp4")}
+                  styles={{ marginTop: '5%' , width:"100%" ,  height:200}}
+                  
 
                 />
 
-                <Video
-                  ref={video}
-                  style={{ marginTop: '5%' , marginBottom:100 , width:"100%" , height:200 }}
-                  source={
-                    require("../videos/arm.mp4")
-                  }
-                  useNativeControls
-                  isLooping
-                  resizeMode="contain"
-                  onPlaybackStatusUpdate={status => setStatus(() => status)}
+                <CustomVideoPlayer
+                  vid_url={require("../videos/arm.mp4")}
+                  styles={{ marginTop: '5%' , marginBottom:100 , width:"100%" , height:200 }}
+                
                 /> 
                  
        

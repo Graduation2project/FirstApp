@@ -3,10 +3,12 @@ import * as React from 'react'
 import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput,TouchableOpacity } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import SpeakerComponent from '../Navigation/SpeakerComponent';
 export default class Order2HeartAttack extends React.Component {
 
   constructor() {
     super();
+    this.callref = React.createRef()
     this.state = {
       text: ""
 
@@ -114,8 +116,8 @@ export default class Order2HeartAttack extends React.Component {
              ,justifyContent:"center"
             }}>
 
-            <FontAwesome5 name='volume-up' size={30} style={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
-              <Text style={{fontSize:20,fontWeight:"bold"}}>راجع طبيبك المعالج</Text>
+            <SpeakerComponent Custom_ref={this.callref}  styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
+              <Text ref={this.callref} style={{fontSize:20,fontWeight:"bold"}}>راجع طبيبك المعالج</Text>
             </View>
 
           </View>

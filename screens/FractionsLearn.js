@@ -6,20 +6,31 @@ import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, 
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import innerText from 'react-innertext'
+import AndroidTextToSpeech from 'react-native-tts';
+
+import * as Speecher from 'expo-speech'
+import * as Tts from 'react-native-tts';
+import SpeakerComponent from '../Navigation/SpeakerComponent'
+
+
 const { width, height } = Dimensions.get('window')
 export default class FractionsLearn extends React.Component {
 
   constructor() {
     super()
-
+    this.callref = React.createRef()
+    this.callref2 = React.createRef()
     this.state = {
 
     }
   }
+
+  
   render() {
     return (
       <>
-        <View style={{ backgroundColor: "#fff", flex: 1 }}>
+        <View   style={{ backgroundColor: "#fff", flex: 1 }}>
 
 
           <View style={{
@@ -42,12 +53,11 @@ export default class FractionsLearn extends React.Component {
           }}>
             <ScrollView>
 
-
-            
+      
+            <View ref={this.callref}>
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-             <Text style={styles.titel}>*الكسر في الاصابع :-</Text>
-              <FontAwesome5 name='volume-up'
-                size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+             <Text  style={styles.titel}>*الكسر في الاصابع :-</Text>
+              <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
           </View>
             <Text style={styles.text}>.اذا كان المريض يعاني من: </Text>
             <Text style={styles.text}>1.تورم في الاصبع المصاب </Text>
@@ -67,10 +77,12 @@ export default class FractionsLearn extends React.Component {
                   onPress={() => Linking.openURL('https://www.youtube.com/watch?v=UMjAxJoS1N4')}>
               https://www.youtube.com/watch?v=UMjAxJoS1N4
             </Text>
-            <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
+            </View>
+         
+         <View ref={this.callref2}>
+              <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
                 <Text style={styles.titel}>* الكسر في الاطراف كالذراع والقدم :-</Text>
-                <FontAwesome5 name='volume-up'
-                  size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+                <SpeakerComponent Custom_ref={this.callref2} styles={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
               </View>
 
 
@@ -78,7 +90,7 @@ export default class FractionsLearn extends React.Component {
               <Text style={styles.text}>اذا كان المريض يعاني من  :   </Text>
               <Text style={styles.text}>1.تورم في مكان الاصابه    </Text>
               <Text style={styles.text}>2.آلام حاده في مكان الاصابه   </Text>
-              <Text style={styles.text}>3.تشوه او اعوجاج     </Text>
+              <Text style={styles.text}>3.تشوه او اعوجاج    </Text>
              
              
               <View style={{ flexDirection: "row", marginTop: '8%' , marginBottom:150, alignSelf: "flex-end" }}>
@@ -88,6 +100,8 @@ export default class FractionsLearn extends React.Component {
 
              
               </View>
+         </View>
+           
             </ScrollView>
           </View>
 

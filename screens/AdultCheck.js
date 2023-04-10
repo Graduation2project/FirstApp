@@ -2,18 +2,25 @@ import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
 import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import * as Speech from 'expo-speech'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import innerText from 'react-innertext';
+import SpeakerComponent from './../Navigation/SpeakerComponent';
 const { width, height } = Dimensions.get('window')
 export default class AdultCheck extends React.Component {
 
   constructor() {
     super()
 
+    this.callref = React.createRef()
+
     this.state = {
 
     }
   }
+
+
+
   render() {
     return (
       <>
@@ -31,7 +38,7 @@ export default class AdultCheck extends React.Component {
 
           </View>
 
-          <View style={{
+          <View ref={this.callref} style={{
             position: "absolute",
             width: "100%",
             height: height - 68,
@@ -42,8 +49,7 @@ export default class AdultCheck extends React.Component {
 
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
               <Text style={styles.titel}>*افحص العلامات الحيوية :-</Text>
-              <FontAwesome5 name='volume-up'
-                size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+              <SpeakerComponent Custom_ref={this.callref} />
             </View>
 
             <Text style={styles.text}>.النبض من الشريان السباتى</Text>
@@ -59,10 +65,10 @@ export default class AdultCheck extends React.Component {
            <View style={{width:"80%",backgroundColor:'#159da9',height:"20%",alignSelf:"center",marginTop:"7%",borderRadius:10}}>
              <Text style={{fontSize:20,textAlign:"center",marginTop:30}}>هل يوجد نبض؟ </Text>
               <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:"7%"}}>
-               <TouchableOpacity style={{width:80,height:40,backgroundColor:"white",borderRadius:5,alignItems:"center",justifyContent:"center"}}>
+               <TouchableOpacity onPress={() => this.props.navigation.navigate("CprAdult")} style={{width:80,height:40,backgroundColor:"white",borderRadius:5,alignItems:"center",justifyContent:"center"}}>
                  <Text style={{color:'#159da9',fontSize:18}}>لا</Text>
                </TouchableOpacity>
-               <TouchableOpacity style={{width:80,height:40,backgroundColor:"white",borderRadius:5,alignItems:"center",justifyContent:"center"}}>
+               <TouchableOpacity onPress={() => this.props.navigation.navigate("PulseYes")} style={{width:80,height:40,backgroundColor:"white",borderRadius:5,alignItems:"center",justifyContent:"center"}}>
                  <Text style={{color:'#159da9',fontSize:18}}>نعم</Text>
                </TouchableOpacity>
               </View>

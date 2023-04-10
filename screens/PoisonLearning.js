@@ -1,6 +1,6 @@
 import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions, Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
@@ -48,7 +48,7 @@ export default class PoisonLearning extends React.Component {
             <Text style={styles.titel}>تسمم الطعام:-</Text>
               <Text style={styles.text}>.عدم جعله يتقيأ</Text>
               <Text  style={styles.text}>.قم بالاتصال بمركز السموم</Text>
-              <Text  style={{color:"#159da9",fontSize:12,fontWeight:"bold",marginTop:"8%"}}>https://www.youtube.com/watch?v=KEfLi97i_mI</Text>
+              <Text onPress={() => Linking.openURL("https://www.youtube.com/watch?v=KEfLi97i_mI")} style={{color:"#159da9",fontSize:12,fontWeight:"bold",marginTop:"8%"}}>https://www.youtube.com/watch?v=KEfLi97i_mI</Text>
 
             <Text style={styles.titel}>التسمم بسبب بلع قرص غلة:-</Text>
               <Text style={styles.text}>.قم بالاتصال بمركز السموم</Text>

@@ -6,6 +6,7 @@ import {  Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar,
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import SpeakerComponent from '../Navigation/SpeakerComponent'
 const { width, height } = Dimensions.get('window')
 
 
@@ -13,7 +14,7 @@ export default class Finger extends React.Component {
 
   constructor() {
     super()
-
+    this.callref = React.createRef()
     this.state = {
 
     }
@@ -35,7 +36,7 @@ export default class Finger extends React.Component {
 
           </View>
 
-          <View style={{
+          <View ref={this.callref} style={{
             position: "absolute",
             width: "100%",
             height: height - 68,
@@ -48,8 +49,7 @@ export default class Finger extends React.Component {
             
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
              <Text style={styles.titel}>*الكسر في الاصابع :-</Text>
-              <FontAwesome5 name='volume-up'
-                size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+              <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
           </View>
   <Text style={styles.text}>.اذا كان المريض يعاني من: </Text>
             <Text style={styles.text}>1.تورم في الاصبع المصاب </Text>

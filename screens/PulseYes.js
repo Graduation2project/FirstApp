@@ -2,15 +2,16 @@ import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
 import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
-import VideoPlayer from 'react-native-video-player'
+import CustomVideoPlayer from '../Navigation/CustomVideoPlayer';
+import SpeakerComponent from './../Navigation/SpeakerComponent';
+
+
 const { width, height } = Dimensions.get('window')
 export default class PulseYes extends React.Component {
 
   constructor() {
     super()
-
+    this.callref = React.createRef()
     this.state = {
 
     }
@@ -32,7 +33,7 @@ export default class PulseYes extends React.Component {
 
           </View>
 
-          <View style={{
+          <View ref={this.callref} style={{
             position: "absolute",
             width: "100%",
             height: height - 68,
@@ -43,8 +44,7 @@ export default class PulseYes extends React.Component {
 
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
               <Text style={styles.titel}>*الاجراءات :-</Text>
-              <FontAwesome5 name='volume-up'
-                size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
+             <SpeakerComponent Custom_ref={this.callref} />
             </View>
 
             <View style={{flexDirection:"row",marginTop: '8%',alignSelf:"flex-end"}}>
@@ -53,14 +53,9 @@ export default class PulseYes extends React.Component {
             </View>
             <Text style={styles.text}>.قم بطلب الاسعاف</Text>
              <Text style={styles.text}>.ضعه فى وضع الافاقه</Text>
-             <VideoPlayer video={require("../videos/elefakeh.mp4")}  
-                 showDuration={true}
-                 autoplay
-                // disableControlsAutoHide={true}
-                 defaultMuted={true}
-                 disableSeek={true}
-                 pauseOnPress={true}
-                  style={{marginTop:"8%"}}/>
+
+             <CustomVideoPlayer vid_url={require("../videos/elefakeh.mp4")} styles={{marginTop:"8%"}} />
+             
              <Text style={styles.text}>.قم باعطائه اى شىء به سكر وضغ اصبعك فوق لسانه لتجنب البلع</Text>
             
           </View>

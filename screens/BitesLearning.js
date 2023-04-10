@@ -1,23 +1,26 @@
 import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, Button, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+
 const { width, height } = Dimensions.get('window')
 export default class BiresLearning extends React.Component {
 
   constructor() {
     super()
-
+    this.callref = React.createRef()
     this.state = {
-
+      
     }
   }
+
+
   render() {
     return (
       <>
-        <View style={{ backgroundColor: "#fff", flex: 1 }}>
+        <View ref={this.callref} style={{ backgroundColor: "#fff", flex: 1 }}>
 
 
           <View style={{
@@ -25,6 +28,7 @@ export default class BiresLearning extends React.Component {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
+  
 
             <Image source={require("../images/medicine.png")}
               style={{ width: 321, height: 329, opacity: 0.1 }} />
@@ -77,7 +81,7 @@ const styles = StyleSheet.create({
     color: '#159da9'
   },
   text: {
-     marginTop: '8%',
+    marginTop: '8%',
     fontSize: 16,
     marginRight: 20,
     color: '#000'

@@ -4,11 +4,13 @@ import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import RadioGroup from 'react-native-radio-buttons-group';
+import SpeakerComponent from './../Navigation/SpeakerComponent';
 const { width, height } = Dimensions.get('window')
 export default class Faint3 extends React.Component {
 
     constructor(props){
               super(props)
+              this.callref = React.createRef()
                  this.state = {  
                             
                      radioButtons: [
@@ -50,6 +52,8 @@ export default class Faint3 extends React.Component {
   render() {
     return (
       <>
+            <Text style={{ display:"none"}} ref={this.callref}>{this.state.radioButtons.reduce( (acc , curr) => acc + curr.label,"") }</Text>
+
         <View style={{ backgroundColor: "#fff", flex: 1 }}>
           <View style={{ backgroundColor: "#fff", flex: 1 }}>
             <View style={{ width: "100%", height:50 , alignSelf: "center", marginTop: 20, paddingHorizontal: "2.5%", flexDirection: 'row' }}>
@@ -144,7 +148,7 @@ export default class Faint3 extends React.Component {
               borderRadius:10
             }}>
 
-            <FontAwesome5 name='volume-up' size={30} style={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
+            <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
               <RadioGroup 
          
             radioButtons={this.state.radioButtons}

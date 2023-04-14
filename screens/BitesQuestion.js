@@ -1,6 +1,6 @@
 import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity , Linking } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import SpeakerComponent from '../Navigation/SpeakerComponent';
@@ -92,8 +92,11 @@ export default class BitesQuestion extends React.Component {
            
           </View>
 
-          <View style={{ position: 'absolute', bottom: 70, left: 15, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
-            <FontAwesome5 name='phone-alt' size={25} style={{ color: '#fff', }} />
+          <View style={{ position: 'absolute', bottom: 2, left: 15, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+            <FontAwesome5 onPress={() => {
+              console.log("asd");
+              Linking.openURL("tel://12355654656")
+            }} name='phone-alt' size={25} style={{ color: '#fff', }} />
 
           </View>
 

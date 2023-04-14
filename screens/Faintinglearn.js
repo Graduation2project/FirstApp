@@ -1,10 +1,11 @@
 ///////////////////الاغماء تعليمي/////////////////////////////////////
 import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions, Linking } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions,  Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import PhoneNumbers from '../Navigation/PhoneNumbers'
 const { width, height } = Dimensions.get('window')
 export default class Faintinglearn extends React.Component {
 
@@ -136,9 +137,11 @@ export default class Faintinglearn extends React.Component {
 
                    
 
-          <View style={{ position: 'absolute', bottom: 80, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ position: 'absolute', bottom: 2, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+            <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
             <Icon name='phone-alt' size={25} style={{ color: '#fff', }} />
 
+            </TouchableOpacity>
           </View>
 
         </View>

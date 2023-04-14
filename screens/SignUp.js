@@ -1,10 +1,10 @@
 ////////////////sign up/////
 import * as React from 'react'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import axios from 'axios'
 import baseUrl from '../my_axios'
-import { ToastAndroid } from 'react-native';
+import { ToastAndroid , Linking } from 'react-native';
 export default class SignUp extends React.Component {
   constructor() {
     super()

@@ -1,7 +1,7 @@
 ////////////////////////////كسر في الاطراف كالذراع والقدم //////////////////////
 import * as React from 'react'
 
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions , Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 import SpeakerComponent from './../Navigation/SpeakerComponent';
@@ -95,9 +95,12 @@ export default function Foot () {
 
         
 
-          <View style={{ position: 'absolute', bottom: 80, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ position: 'absolute', bottom: 2, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+           
+            <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
             <Icon name='phone-alt' size={25} style={{ color: '#fff', }} />
 
+            </TouchableOpacity>
           </View>
 
         </View>

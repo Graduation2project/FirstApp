@@ -66,7 +66,8 @@ import CprAdult from './../screens/CprAdult';
 import CprBaby from './../screens/CprBaby';
 import ChildBreatheNo from './../screens/ChildBreatheNo';
 import PulseYes from './../screens/PulseYes';
-
+import Test from '../Navigation/TestComp.jsx'
+import { StyleSheet, Text , Linking } from 'react-native';
 
 
 
@@ -75,7 +76,7 @@ export default function Home_Stack({LearningState }) {
     const Stack = createNativeStackNavigator();
     // const [LearningState , SetLearningState] = useState(false)
     //const navigation = useNavigation();
-  
+    options={ headerTitleAlign:"center"  , headerTitleStyle:styles.text}
     return (
   
       <>
@@ -83,105 +84,104 @@ export default function Home_Stack({LearningState }) {
   
   
         <Stack.Navigator initialRouteName='Home'>
-    
-        <Stack.Screen name='Home' >
+           <Stack.Screen  options={{...options , title:""}} name='test' component={Test} />   
+        <Stack.Screen  options={{headerShown:false}} name='Home'  >
         {(props) => <Home {...props} LearningState={LearningState} />}
         </Stack.Screen>
       
       
         
         
-        <Stack.Screen name='Home2' component={Home2} />
+        <Stack.Screen  options={{...options , title:""}} name='Home2' component={Home2} />
  
   
         {/* Registration*/}
     
-        <Stack.Screen name='Sign Up' component={SignUp} />
+        <Stack.Screen  options={{...options , title:"التسجيل" , headerTitle:""}} name='Sign Up' component={SignUp} />
           
   
           {/* Bites */}
-        <Stack.Screen name='BitesQuestion' component={BitesQuestion} />
-        <Stack.Screen name='DogBite' component={DogBite} />
-        <Stack.Screen name='CatBite' component={CatBite} />
-        <Stack.Screen name='BitesLearning' component={BitesLearning} />
+        <Stack.Screen  options={{...options , title:"نوع العضة"}} name='BitesQuestion' component={BitesQuestion} />
+        <Stack.Screen  options={{...options , title:"عضة كلب"}} name='DogBite' component={DogBite} />
+        <Stack.Screen  options={{...options , title:"عضة قطة"}} name='CatBite' component={CatBite} />
+        <Stack.Screen  options={{...options , title:"العضات"}} name='BitesLearning' component={BitesLearning} />
   
         {/* Stings   */}
-        <Stack.Screen name='StingQuestion' component={StingQuestion} />
-        <Stack.Screen name='SnakeSting' component={SnakeSting} />
-        <Stack.Screen name='BeeSting' component={BeeSting} />
-        <Stack.Screen name='StingsLearning' component={StingsLearning} />
+        <Stack.Screen  options={{...options , title:"نوى اللدغة"}} name='StingQuestion' component={StingQuestion} />
+        <Stack.Screen  options={{...options , title:"لدغة ثعبان"}} name='SnakeSting' component={SnakeSting} />
+        <Stack.Screen  options={{...options , title:"لدغة دبور"}} name='BeeSting' component={BeeSting} />
+        <Stack.Screen  options={{...options , title:"اللدغات"}} name='StingsLearning' component={StingsLearning} />
   
         {/* Breathing   */}
-        <Stack.Screen name='BlockQuestion' component={BlockQuestion} />
+        <Stack.Screen  options={{...options , title:"انسداد مجرى التنفس"}} name='BlockQuestion' component={BlockQuestion} />
       
-        <Stack.Screen name='BreathYes' component={BreathYes} />  
-        <Stack.Screen name='BreathNo' component={BreathNo} />  
-        <Stack.Screen name='BlockChild' component={BlockChild} />  
-        <Stack.Screen name='BlockAdult' component={BlockAdult} />  
-        <Stack.Screen name='BlockLearning' component={BlockLearning} />  
+        <Stack.Screen  options={{...options , title:"انسداد مجرى التنفس"}} name='BreathYes' component={BreathYes} />  
+        <Stack.Screen  options={{...options , title:"انسداد مجرى التنفس" }} name='BreathNo' component={BreathNo} />  
+        <Stack.Screen  options={{...options , title:"الطفل"}} name='BlockChild' component={BlockChild} />  
+        <Stack.Screen  options={{...options , title:"البالغ"}} name='BlockAdult' component={BlockAdult} />  
+        <Stack.Screen  options={{...options , title:"انسداد مجرى التنفس"}} name='BlockLearning' component={BlockLearning} />  
   
   
         {/* Fractions   */}
-        <Stack.Screen name='FractionQuestion' component={FractionQuestion} />
-        <Stack.Screen name='Foot' component={Foot} />
-        <Stack.Screen name='Vertebral' component={Vertebral}/>
-        <Stack.Screen name='FingerFraction' component={FingerFraction}/>
-        <Stack.Screen name='FractionsLearn' component={FractionsLearn}/>
+        <Stack.Screen  options={{...options , title:"نوع الكسر"}} name='FractionQuestion' component={FractionQuestion} />
+        <Stack.Screen  options={{...options , title:"القدم"}} name='Foot' component={Foot} />
+        <Stack.Screen  options={{...options , title:"الظهر"}} name='Vertebral' component={Vertebral}/>
+        <Stack.Screen  options={{...options , title:"اليد"}} name='FingerFraction' component={FingerFraction}/>
+        <Stack.Screen  options={{...options , title:"الكسور"}} name='FractionsLearn' component={FractionsLearn}/>
   
           
   
         {/* Faints */}
-          <Stack.Screen name='Faint' component={Faint1} />
-          <Stack.Screen name='Faint2' component={Faint2} />
-          <Stack.Screen name='Faint3' component={Faint3} />
-          <Stack.Screen name='SugarAndPressure' component={SugarAndPressure} />
-          <Stack.Screen name='PressureOrNot' component={PressureOrNot} />
-          <Stack.Screen name='AdultCheck' component={AdultCheck} />
-          <Stack.Screen name='ChildVitalSigns' component={ChildVitalSigns} />
-          <Stack.Screen name='Chbreath' component={ChildBreathYes} />
+          <Stack.Screen  options={{...options , title:"حالة المريض"}} name='Faint' component={Faint1} />
+          <Stack.Screen  options={ {...options,title:"حالة المريض"}} name='Faint2' component={Faint2} />
+          <Stack.Screen  options={{...options , title:"حالة المريض"}} name='Faint3' component={Faint3} />
+          <Stack.Screen  options={{...options , title:"السكر و الضغط"}} name='SugarAndPressure' component={SugarAndPressure} />
+          <Stack.Screen  options={{...options , title:"لا يعانى من السكر و الضغط"}} name='PressureOrNot' component={PressureOrNot} />
+          <Stack.Screen  options={{...options , title:"البالغ"}} name='AdultCheck' component={AdultCheck} />
+          <Stack.Screen  options={{...options , title:"العلامات الحيوية الخاصة بالطفل"}} name='ChildVitalSigns' component={ChildVitalSigns} />
+          <Stack.Screen  options={{...options , title:"تنفس الطفل"}} name='Chbreath' component={ChildBreathYes} />
 
 
-          <Stack.Screen name='PulseYes' component={PulseYes} />
+          <Stack.Screen  options={{...options , title:"يوجد نبض"}} name='PulseYes' component={PulseYes} />
 
-          <Stack.Screen name='ChildPulseYes' component={ChildPulseYes} />
+          <Stack.Screen  options={{...options , title:"يوجد نبض"}} name='ChildPulseYes' component={ChildPulseYes} />
 
-          <Stack.Screen name='CprQuestion' component={CprQuestion} />
-          <Stack.Screen name='CprChild' component={CprChild} />
+          <Stack.Screen  options={{...options , title:"C.P.R"}} name='CprQuestion' component={CprQuestion} />
+          <Stack.Screen  options={{...options , title:" للاطفال C.P.R"}} name='CprChild' component={CprChild} />
 
  
-         <Stack.Screen name='ChildBreatheNo' component={ChildBreatheNo} /> 
+         <Stack.Screen  options={{...options , title:"لا يوجد نفس"}} name='ChildBreatheNo' component={ChildBreatheNo} /> 
 
-          <Stack.Screen name='CprAdult' component={CprAdult} />
+          <Stack.Screen  options={{...options , title:"  للبالغين C.P.R"}} name='CprAdult' component={CprAdult} />
 
-          <Stack.Screen name='CprBaby' component={CprBaby} />
-          <Stack.Screen name='Faintinglearn' component={Faintinglearn} />
+          <Stack.Screen  options={{...options , title:" للرضيع C.P.R"}} name='CprBaby' component={CprBaby} />
+          <Stack.Screen  options={{...options , title:"الاغماء"}} name='Faintinglearn'  component={Faintinglearn} />
           
         {/* Posioning */}
   
-        <Stack.Screen name='Poison_Question'  component={PoisonQuestion} />
-        <Stack.Screen name='GazPoisonYes' component={GazPoisonYes} />
-        <Stack.Screen name='GazPoisonNo' component={GazPoisonNo}/>
-        <Stack.Screen name='FoodPoisonYes' component={FoodPoisonYes} />
-        <Stack.Screen name='FoodPoisonNo' component={FoodPoisonNo}/>
-        <Stack.Screen name='WheatPoison' component={WheatPoison}/>
+        <Stack.Screen  options={{...options , title:"نوع التسمم"}} name='Poison_Question'  component={PoisonQuestion} />
+        <Stack.Screen  options={{...options , title:"تسمم غاز"}} name='GazPoisonYes' component={GazPoisonYes} />
+        <Stack.Screen  options={{...options , title:"نوع التسمم"}} name='GazPoisonNo' component={GazPoisonNo}/>
+        <Stack.Screen  options={{...options , title:"تسمم الطعام"}} name='FoodPoisonYes' component={FoodPoisonYes} />
+        <Stack.Screen  options={{...options , title:"نوع التسمم"}} name='FoodPoisonNo' component={FoodPoisonNo}/>
+        <Stack.Screen  options={{...options , title:"تسمم غلة القمح"}} name='WheatPoison' component={WheatPoison}/>
   
-        <Stack.Screen name='PoisonLearning' component={PoisonLearning}/>
+        <Stack.Screen  options={{...options , title:"التسمم"}} name='PoisonLearning' component={PoisonLearning}/>
   
   
         {/* Heart Attack */}
-        <Stack.Screen name='HeartAttackQuestion'  component={HeartAttackQuestion} />
-        <Stack.Screen name='Order1HeartAttack'  component={Order1HeartAttack} />
-        <Stack.Screen name='Order2HeartAttack'  component={Order2HeartAttack} />
-        <Stack.Screen name='HeartAttakLearn'  component={HeartAttakLearn} />
+        <Stack.Screen  options={{...options , title:"ازمة قلبية"}} name='HeartAttackQuestion'  component={HeartAttackQuestion} />
+        <Stack.Screen  options={{...options , title:"ازمة قلبية" }} name='Order1HeartAttack'  component={Order1HeartAttack} />
+        <Stack.Screen  options={{...options , title:"ازمة قلبية"}} name='Order2HeartAttack'  component={Order2HeartAttack} />
+        <Stack.Screen  options={{...options , title:"ازمة قلبية"}} name='HeartAttakLearn'  component={HeartAttakLearn} />
   
         {/* Burns */}
   
-        <Stack.Screen name='Burn1'  component={Burn1} />
-        <Stack.Screen name='Burn2'  component={Burn2} />
-        <Stack.Screen name='Burn3'  component={Burn3} />
-        <Stack.Screen name='Burnlearn'  component={Burnlearn} />
+        <Stack.Screen  options={{...options , title:"درجة اولى"}} name='Burn1'  component={Burn1} />
+        <Stack.Screen  options={{...options , title:"درجة تانية"}} name='Burn2'  component={Burn2} />
+        <Stack.Screen  options={{...options , title:"درجة الثالثة"}} name='Burn3'  component={Burn3} />
+        <Stack.Screen  options={{...options , title:"الحروق"}} name='Burnlearn'  component={Burnlearn} />
   
-        <Stack.Screen name='Setting'  component={Settings} />
   
         </Stack.Navigator>
   
@@ -199,3 +199,20 @@ export default function Home_Stack({LearningState }) {
       // </View>
     );
   }
+
+  const styles = StyleSheet.create({
+    
+    text: {
+      marginTop: '80%',
+      fontSize: 26,
+      fontWeight:"bold",
+      backgroundColor:"white",
+      width:"100%",
+      marginRight: "100%",
+      color: '#000',
+      position:"absolute",
+      right:"100%",
+      left:50
+  
+    },
+  })

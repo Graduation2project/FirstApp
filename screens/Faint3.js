@@ -1,10 +1,11 @@
 import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity,Dimensions } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity,Dimensions , Linking } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import RadioGroup from 'react-native-radio-buttons-group';
 import SpeakerComponent from './../Navigation/SpeakerComponent';
+import PhoneNumbers from '../Navigation/PhoneNumbers';
 const { width, height } = Dimensions.get('window')
 export default class Faint3 extends React.Component {
 
@@ -127,8 +128,10 @@ export default class Faint3 extends React.Component {
           </View>
 
           <View style={{ position: 'absolute', bottom: 70, left: 15, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+            <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
             <FontAwesome5 name='phone-alt' size={25} style={{ color: '#fff', }} />
 
+            </TouchableOpacity>
           </View>
 
           <View style={{

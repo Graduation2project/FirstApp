@@ -1,8 +1,9 @@
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import { useState } from 'react';
+import Voice from '@react-native-community/voice';
 import Home_Stack from './HomeStack'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { StyleSheet, Text, View , ToastAndroid  } from 'react-native';
+import { StyleSheet, Text, View , ToastAndroid  , Linking } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Setting from '../screens/Setting';
 
@@ -22,7 +23,7 @@ export default function TabNavigation(){
   
               return (
                         <>
-                          <FontAwesome5 name={iconName} size={32} style={{ color: color  }} /> 
+                          <FontAwesome5 name={iconName} size={32} style={{ color: color   }} /> 
                           {x}
                           
                         </>  
@@ -45,21 +46,28 @@ export default function TabNavigation(){
           
         })}>
       
-      <Tab.Screen name="Settings" component={Setting} options={{tabBarLabel:""}} />
+      <Tab.Screen name="Settings" component={Setting} options={{title:"الاعدادات" , tabBarLabel:""}} />
   
   
   
   
         <Tab.Screen name="Learning"   options={{  tabBarLabel:"" ,headerShown:false}}>
-        {(props) => <Home_Stack {...props} LearningState={true}  />}
+          
+        {(props) => {
+              Voice.destroy().then(Voice.removeAllListeners);
+          return ( <Home_Stack {...props} LearningState={true} />)
+        }}
   
         </Tab.Screen>
       
-        <Tab.Screen name="Emergency" options={{tabBarLabel:"" , headerShown:false}}>
-        {(props) => <Home_Stack {...props} LearningState={false}  />}
+         <Tab.Screen name="Emergency" options={{tabBarLabel:"" , headerShown:false}}>
+        {(props) => {
+            Voice.destroy().then(Voice.removeAllListeners);
+          return <Home_Stack {...props} LearningState={false}  />
+        } }
   
         </Tab.Screen>
-  
+   
   
       </Tab.Navigator>
   

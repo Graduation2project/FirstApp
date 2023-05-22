@@ -5,8 +5,8 @@ import Tts from 'react-native-tts';
 
 import Config from '../configs/VoiceConfig'
 
-Tts.setDefaultLanguage('ar');
-
+//Tts.setDefaultLanguage('ar');
+import * as Location from 'expo-location';
 import {
   View,
   Text,

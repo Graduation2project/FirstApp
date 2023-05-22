@@ -38,6 +38,7 @@ export default class Burnlearn extends React.Component {
             position: "absolute",
             width: "100%",
             height: height - 68,
+            paddingBottom:"5%"
           
           }}>
             <ScrollView>
@@ -57,7 +58,12 @@ export default class Burnlearn extends React.Component {
 
               <Text style={styles.titel}>اجراءات حروق الدرجه الثالثه :-</Text>
               <Text style={styles.text}>.حالة الحرق حرجه عليك التوجه الى  مستشفى الحروق </Text>
-              <Text style={{marginTop: '15%',fontSize: 12,marginRight: 20,color: '#159da9' }}>https://youtu.be/HaC2oiBB7sI </Text>
+              <Text style={{marginTop: '5%',
+              transform:[{
+                translateX:80
+              },{translateY:-4}],
+              marginBottom:"20%"
+              ,fontSize: 12,marginRight: 20,color: '#159da9' }}>https://youtu.be/HaC2oiBB7sI </Text>
               {/* <Image source={require("../images/image4.png")} style={{ height: 130, width:230,alignSelf:"center",opacity:.8}}/> */}
             </ScrollView>
           </View>

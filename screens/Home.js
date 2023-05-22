@@ -247,7 +247,7 @@ export default function Home({LearningState , navigation , rando}){
 
               </View>
 
-              <View style={{ width: "100%", flexDirection: "row", marginTop: 10, justifyContent: "space-around", alignItems: "center" }}>
+              <View style={{ width: "100%", flexDirection: "row" , paddingBottom:25 , marginTop: 10, justifyContent: "space-around", alignItems: "center" }}>
                 <TouchableOpacity onPress={() => {navigation.navigate(  LearningState ? "BitesLearning" : "BitesQuestion")}} style={{ height: 130, width: "45%", backgroundColor: "#fff", borderWidth: .5, justifyContent: "center", alignItems: "center" }}>
                   <Image source={require("../images/العضات.png")} style={{ height: "69%", width: "53%", borderRadius: 50 }}></Image>
                   <Text style={{ color: "#000", fontSize: 14, fontWeight: "bold", marginRight: 20 }}>العضات   </Text>

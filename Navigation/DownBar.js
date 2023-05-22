@@ -7,14 +7,18 @@ import { StyleSheet, Text, View , ToastAndroid  , Linking } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Setting from '../screens/Setting';
 
+
+
 const Tab = createBottomTabNavigator()
 
 export default function TabNavigation(){
    
     return (
     
-        
-        <Tab.Navigator initialRouteName='Learning'   screenOptions={({route}) => ({
+     
+  
+       
+        <Tab.Navigator initialRouteName='Learning'  screenOptions={({route}) => ({
           tabBarIcon:({focused , color}) => {
             let iconName;
             let x= focused ? <Text style={{backgroundColor:"white" , borderRadius:50 , transform:[{translateY:5}] , fontWeight:"900" , width:10 , height:10}}></Text > : <Text style={{position:"absolute"}} ></Text>
@@ -40,6 +44,7 @@ export default function TabNavigation(){
           // tabBarBackground:"#159DA9",
           tabBarActiveTintColor:"white",
           tabBarInactiveTintColor:"#fff",
+       
           tabBarStyle: {paddingVertical:5 , paddingBottom:5 , height:68 ,  backgroundColor: "#159DA9"},
           
        //   
@@ -67,9 +72,11 @@ export default function TabNavigation(){
         } }
   
         </Tab.Screen>
-   
+
   
       </Tab.Navigator>
+
+   
   
      
     )

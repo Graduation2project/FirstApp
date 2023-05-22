@@ -4,54 +4,49 @@ import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, 
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import axios from 'axios'
 import baseUrl from '../my_axios'
+import {GetContext} from '../Navigation/Context'
 import { ToastAndroid , Linking } from 'react-native';
-export default class SignIn extends React.Component {
-
-  constructor() {
-    super()
-    this.state = {
-      البريدالالكتروني: '',
-      كلمةالمرور: '',
-      error_fname: "",
-      error_lname: "",
-      error_email: "",
-      error_pass: "",
-    }
-  }
-  login() {
-    let email = this.state.البريدالالكتروني.trim()
-    let pass = this.state.كلمةالمرور.trim()
-
-    let err_email = ''
-    let err_pass = ''
-
-    if (email == '') {
-      err_email = 'Invalid email'
-    }
-    if (pass == '') {
-      err_pass = 'Invalid pass'
-    }
-  //  console.log(email,pass)
+export default function SignIn ({navigation}){
 
   
-    axios.post(baseUrl+"/Auth/login",{
-      
-        email: email ,//"mahmoudv2012@gmail.com2",
-        password: pass //"Vcut2020@"
-      
-    }).then((res) => {
-      //console.log(JSON.stringify(res))
-      ToastAndroid.show(`Welcome Back , ${res.data.username}` , 200)
-      this.props.navigation.navigate("rest")
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     البريدالالكتروني: '',
+  //     كلمةالمرور: '',
+  //     error_fname: "",
+  //     error_lname: "",
+  //     error_email: "",
+  //     error_pass: "",
+  //   }
+  // }
+
+  const [email , setEmail] = React.useState("")
+  const [pass , setPass] = React.useState("")
+  const [Error , setError] = React.useState("")
+  const context = GetContext()
+  
+
+   function login() {
+    
+    if (email == '' || pass == "") {
+      setError('Empty Email or Password')
+    }
+
+
+  
+ context.login(email , pass).then((res) => {
+    console.log(res) 
+     ToastAndroid.show(`Welcome Back , ${res.username}` , 200)
+     navigation.navigate("rest")
     }).catch(err => {
-      console.log("error")
-      this.setState({error_email:"Wrong Email or Password"})
+      console.log(err)
+      setError("Wrong Email or Password")
     })
  
 
-  //  this.setState({ error_email: err_email, error_pass: err_pass })
   }
-  render() {
+  
     return (
       <>
         <View style={{ justifyContent: "space-between" ,marginTop:50,marginRight:20}}>
@@ -78,11 +73,9 @@ export default class SignIn extends React.Component {
           <View style={{ padding: 10 }}>
             <Text style={{fontWeight:"bold"}}>البريدالالكتروني</Text>
             <TextInput
-              value={this.state.البريدالالكتروني}
+              value={email}
               onChangeText={value => {
-                this.setState({
-                  البريدالالكتروني: value
-                })
+                setEmail(value)
               }}
               placeholder='البريدالالكتروني'
               style={{
@@ -97,11 +90,10 @@ export default class SignIn extends React.Component {
           <View style={{ padding: 10 }}>
             <Text style={{fontWeight:"bold"}}>كلمةالمرور</Text>
             <TextInput
-              value={this.state.كلمةالمرور}
+              value={pass}
               onChangeText={value => {
-                this.setState({
-                  كلمةالمرور: value
-                })
+                setPass(value)
+
               }}
               placeholder='كلمةالمرور'
               style={{
@@ -115,14 +107,12 @@ export default class SignIn extends React.Component {
           </View>
             <Text style={{
               color: '#f00'
-            }}>{this.state.error_email}</Text>
+            }}>{Error}</Text>
 
           </View>
 
           <TouchableOpacity
-              onPress={() => {
-                this.login()
-              }}
+              onPress={login}
               style={{
                 paddingHorizontal:30,
                 paddingVertical:15,
@@ -137,10 +127,10 @@ export default class SignIn extends React.Component {
               <Text style={{textAlign:"center",color:"#fff",fontWeight:"bold"}}>تسجيل الدخول</Text>
 
             </TouchableOpacity>
-            <Text onPress={() => {  this.props.navigation.navigate("register")}} style={{fontWeight:'bold', textAlign:'center',marginTop:'5%'}}>تسجيل </Text>
+            <Text onPress={() => {  navigation.navigate("register")}} style={{fontWeight:'bold', textAlign:'center',marginTop:'5%'}}>تسجيل </Text>
             <Text style={{fontWeight:'bold', textAlign:'center',marginTop:'80%'}}>الشروط والاحكام </Text>
         </View>
       </>
     )
-  }
+  
 }

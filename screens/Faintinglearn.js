@@ -37,6 +37,7 @@ export default class Faintinglearn extends React.Component {
             position: "absolute",
             width: "100%",
             height: height - 68,
+            paddingBottom:"5%"
           
           }}>
             <ScrollView>
@@ -151,7 +152,7 @@ export default class Faintinglearn extends React.Component {
 }
 const styles = StyleSheet.create({
   titel: {
-    marginTop: '10%',
+    marginTop: '8%',
     marginBottom:'3%',
     textDecorationLine: 'underline',
     fontWeight: 'bold',
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
     color: '#159da9'
   },
   text: {
-    marginTop: '8%',
+    marginTop: '5%',
     fontSize: 16,
     marginRight: 20,
     color: '#000'

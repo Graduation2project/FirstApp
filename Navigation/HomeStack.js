@@ -82,9 +82,9 @@ export default function Home_Stack({LearningState }) {
       <>
    
   
-  
-        <Stack.Navigator initialRouteName='Home'>
-           <Stack.Screen  options={{...options , title:""}} name='test' component={Test} />   
+    
+      <Stack.Navigator initialRouteName='Home'>
+           {/* <Stack.Screen  options={{...options , title:""}} name='test' component={Test} />    */}
         <Stack.Screen  options={{headerShown:false}} name='Home'  >
         {(props) => <Home {...props} LearningState={LearningState} />}
         </Stack.Screen>
@@ -184,6 +184,8 @@ export default function Home_Stack({LearningState }) {
   
   
         </Stack.Navigator>
+
+  
   
    
      

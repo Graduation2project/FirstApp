@@ -54,9 +54,10 @@ export default class SignUp extends React.Component {
         password: pass
       
     }).then(res => {
+      this.props.navigation.navigate("Login")
       console.log( res.data)
     })
-    .catch(_ => ToastAndroid.show("Invalid Data Submitted" , 200))
+    .catch(err => ToastAndroid.show("Invalid Data Submitted" , 200))
 
 
     //this.props.navigation.navigate("Home")
@@ -73,7 +74,7 @@ export default class SignUp extends React.Component {
             </Text>
           </View>
             {/* image is not appearing correctly */}
-            <Image source={require("../images/emergency(1).png")}  style={{height:"3%",width:"15%"}}/>
+            <Image source={require("../images/emergency(1).png")}  style={{ transform:[{translateX:30 } , {translateY:-50}] ,height:60,width:60}}/>
 
 
         </View>

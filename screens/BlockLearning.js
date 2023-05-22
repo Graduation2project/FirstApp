@@ -36,7 +36,8 @@ export default class BlockLearning extends React.Component {
             position: "absolute",
             width: "100%",
             height: height - 68,
-            paddingHorizontal:"2%"
+            paddingHorizontal:"2%",
+            paddingBottom:"5%"
           
           }}>
             <ScrollView>
@@ -65,7 +66,9 @@ export default class BlockLearning extends React.Component {
               <Text style={styles.text}>.يتم وضع الطفل على يدك اليسرى ورأسه مائلة الى الأسفل</Text>
               <Text style={{color:"black",fontSize:16}}>       وقم بوضع اصابعك على خد الرضيع حتى لا يسقط</Text>
               <Text style={[styles.text , {marginBottom:20}]}>.قم بالخبط على ظهره حتى خروج الجسم الغريب</Text>
-              <Text onPress={() => {Linking.openURL("https://youtu.be/2QWIhLvHzp")}} style={{fontSize:12,fontWeight:"bold",color:"#159da9",marginTop:"8%"}}>https://youtu.be/2QWIhLvHzpE</Text>
+              <Text onPress={() => {Linking.openURL("https://youtu.be/2QWIhLvHzp")}} style={{fontSize:12,fontWeight:"bold",color:"#159da9",marginBottom:"20%" , 
+              transform:[{translateX:70} , {translateY:5}]
+              ,marginTop:"2%"}}>https://youtu.be/2QWIhLvHzpE</Text>
 
             </ScrollView>
           </View>

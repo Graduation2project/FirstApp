@@ -37,7 +37,8 @@ export default class PoisonLearning extends React.Component {
             position: "absolute",
             width: "100%",
             height: height - 68,
-            paddingHorizontal:"2%"
+            paddingHorizontal:"2%",
+            paddingBottom:"5%"
           
           }}>
             <ScrollView>

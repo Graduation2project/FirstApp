@@ -36,7 +36,9 @@ export default class StingsLearning extends React.Component {
             position: "absolute",
             width: "100%",
             height: height - 68,
-            paddingHorizontal:"2%"
+            paddingHorizontal:"2%",
+            paddingBottom:"5%"
+          
           
           }}>
             <ScrollView>
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
     color: '#159da9'
   },
   text: {
-     marginTop: '8%',
+     marginTop: '5%',
     fontSize: 16,
     marginRight: 20,
     color: '#000'

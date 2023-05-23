@@ -33,7 +33,7 @@ export default function CprChild ({navigation}) {
                   q_As: [
                     {
                       question: "هل يوجد نبض ؟",
-                      answer: "لا"
+                      answer: "لا "
                     },{
                       question: "ما الفئة العمرية ؟",
                       answer: "طفل"

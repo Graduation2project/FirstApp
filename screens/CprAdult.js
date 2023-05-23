@@ -1,6 +1,6 @@
 import * as React from 'react'
 //import ImagePicker from 'react-native-image-crop-picker'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions , Linking } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity, Dimensions , Linking, ToastAndroid } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
@@ -8,18 +8,46 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import CustomVideoPlayer from './../Navigation/CustomVideoPlayer';
 import SpeakerComponent from './../Navigation/SpeakerComponent';
 import PhoneNumbers from '../Navigation/PhoneNumbers'
+import { GetContext } from '../Navigation/Context'
 
 const { width, height } = Dimensions.get('window')
-export default class CprAdult extends React.Component {
+export default function  CprAdult ({navigation})    {
 
-  constructor() {
-    super()
-    this.callref = React.createRef()
-    this.state = {
+  const speakerRef = React.useRef()
+  context = GetContext();
+  
+  sendData = async () => {
 
+    try {
+      await context.sendata(
+        {
+          userID: this.context.userData.userID,
+          username: this.context.userData.username,
+          status : "not_seen",
+          emergencies: [
+            {
+              caseTitle: "الغماء",
+              q_As: [
+                {
+                  question: "هل يوجد نبض ؟",
+                  answer: "لا"
+                },{
+                  question: "ما الفئة العمرية ؟",
+                  answer: "طفل"
+                }
+              ]
+            }
+          ]
+        })
+      ToastAndroid.show("Data Sent To the paramedics",500 )
+    } catch (error) {
+      console.log(error.message)
     }
+  
+
+
   }
-  render() {
+
     return (
       <>
         <View style={{ backgroundColor: "#fff", flex: 1 }}>
@@ -44,10 +72,10 @@ export default class CprAdult extends React.Component {
           
           }}>
          
-         <ScrollView ref={this.callref}>
+         <ScrollView ref={speakerRef}>
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
               <Text style={styles.titel}>*الاجراءات :-</Text>
-              <SpeakerComponent Custom_ref={this.callref} />
+              <SpeakerComponent Custom_ref={speakerRef} />
             </View>
               
                <Text style={styles.text}>.قم بوضع كف يدك بالتشابك مع اليد الأخرى فى منتصف صدر المريض ثم قم بعمل 30 ضغطة كما هو موضح</Text>
@@ -64,21 +92,29 @@ export default class CprAdult extends React.Component {
             
             
           </View>
+          
+          <TouchableOpacity onPress={sendData} >
+              <Image source={require("../images/image6.png")} style={{ height: 100, width: 100,alignSelf:"center",marginTop:40,
+              transform:[{translateY:-20}],
+              marginBottom:20
+          
+            
+            }}/>
 
-         
+</TouchableOpacity>
 
-          <View style={{ position: 'absolute', bottom: 2, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
+          {/* <View style={{ position: 'absolute', bottom: 2, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
           <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
             <Icon name='phone-alt' size={25} style={{ color: '#fff', }} />
 
             </TouchableOpacity>
 
-          </View>
+          </View> */}
 
         </View>
       </>
     )
-  }
+  
 }
 const styles = StyleSheet.create({
   titel: {

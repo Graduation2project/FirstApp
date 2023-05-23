@@ -50,10 +50,10 @@ export default class ChildBreatheNo extends React.Component {
             <Text style={styles.text}>.قم بوضع كحول عند الأنف</Text>
             <Text style={styles.text}>.اذا تمت افاقته راقبه وقم بمراجعة الطبيب</Text>
 
-            <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
+            {/* <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
             <Image source={require("../images/image6.png")} style={{ height: 225, width: 220,alignSelf:"center",marginTop:50}}/>
 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             
           </View>

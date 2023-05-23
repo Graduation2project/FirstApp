@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import SpeakerComponent from '../Navigation/SpeakerComponent'
+import CustomVideoPlayer from './../Navigation/CustomVideoPlayer';
+
 import PhoneNumbers from '../Navigation/PhoneNumbers'
 const { width, height } = Dimensions.get('window')
 
@@ -65,6 +67,12 @@ export default class Finger extends React.Component {
               <Text style={{ fontSize: 16, color: '#e81025',marginTop:5}}>.في حاله النزيف  مع وجود  الكسر يجب التوجهه للمستشفي قد تحتاج الاصابه الي التدخل الجراحي  </Text>
               <Image source={require("../images/warning-sign.png")} style={{ height: 25, width: 30}}/>
             </View>
+
+            <CustomVideoPlayer
+                  vid_url={require("../videos/arm.mp4")}
+                  styles={{ marginTop: '5%' , marginBottom:100 , width:"100%" , height:200 }}
+                
+                /> 
           
             </ScrollView>
           </View>

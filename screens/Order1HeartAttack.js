@@ -158,13 +158,13 @@ export default function Order1HeartAttack () {
           </View>
 
         
-
+{/* 
           <View style={{ position: 'absolute', bottom: 2, left: 10, backgroundColor: "#f00", width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' }}>
             <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Emergency)}>
             <FontAwesome5 name='phone-alt' size={25} style={{ color: '#fff', }} />
 
             </TouchableOpacity>
-          </View>
+          </View> */}
 
           {/* <View>
             <Text>{locatoion}</Text>

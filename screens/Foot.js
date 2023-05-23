@@ -79,11 +79,7 @@ export default function Foot () {
 
                 />
 
-                <CustomVideoPlayer
-                  vid_url={require("../videos/arm.mp4")}
-                  styles={{ marginTop: '5%' , marginBottom:100 , width:"100%" , height:200 }}
-                
-                /> 
+               
                  
        
             

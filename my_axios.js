@@ -1,2 +1,2 @@
 
-export default "http://192.168.193.47/api"
+export default "http://192.168.1.8/api"

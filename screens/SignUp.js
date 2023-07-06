@@ -57,7 +57,7 @@ export default class SignUp extends React.Component {
       this.props.navigation.navigate("Login")
       console.log( res.data)
     })
-    .catch(err => ToastAndroid.show("Invalid Data Submitted" , 200))
+   .catch(error=>{console.log(error)})
 
 
     //this.props.navigation.navigate("Home")

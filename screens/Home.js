@@ -1,15 +1,18 @@
 import * as React from 'react'
-import {ActivityIndicator , Text, View, Image, TextInput,TouchableOpacity, Button  } from 'react-native'
+import {ActivityIndicator , Text, View, Image, TextInput,TouchableOpacity, Button, Alert  } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import Voice from '@react-native-community/voice';
+import ImagePicker from 'react-native-image-crop-picker';
 
-
+import { PermissionsAndroid } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { ToastAndroid , Linking } from 'react-native'
 import PhoneNumbers from '../Navigation/PhoneNumbers'
 import innerText from 'react-innertext';
 import Recorder from './Home2';
+import axios from 'axios';
+import { PermissionStatus } from 'expo-location';
 
 
 
@@ -142,6 +145,47 @@ export default function Home({LearningState , navigation , rando}){
     }
   };
 
+  function showDialog(title, message) {
+    return new Promise((resolve) => {
+      Alert.alert(
+        title,
+        message,
+        [
+          {
+            text: 'Cancel',
+            onPress: () => resolve(false),
+            style: 'cancel',
+          },
+          {
+            text: 'OK',
+            onPress: () => resolve(true),
+          },
+        ],
+        { cancelable: false },
+      );
+    });
+  }
+  async function requestGalleryPermission() {
+    try {
+      const granted = await PermissionsAndroid.requestMultiple([
+        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        PermissionsAndroid.PERMISSIONS.CAMERA,
+
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+      ]);
+      if (
+        granted['android.permission.READ_EXTERNAL_STORAGE'] === PermissionsAndroid.RESULTS.GRANTED &&
+        granted['android.permission.WRITE_EXTERNAL_STORAGE'] === PermissionsAndroid.RESULTS.GRANTED &&
+        granted['android.permission.CAMERA'] === PermissionsAndroid.RESULTS.GRANTED
+      ) {
+        console.log('File permissions granted');
+      } else {
+        console.log('File permissions denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
  
 
 
@@ -158,7 +202,46 @@ export default function Home({LearningState , navigation , rando}){
     },[])
 
 
+    const BurnsHandler = async () => {
+     
+       await requestGalleryPermission()
+      ImagePicker.openPicker({
+        cropping:false
+      }).then( async image => {
+       // console.log(image);
+        let formdataer = new FormData()
+        formdataer.append("image" , {
+          uri: image.path,
+          type: 'image/jpeg',
+          name: 'image.jpg',
+        })
+        axios.post("http://192.168.1.30:82/api/ImageProcess" , formdataer,{
+          headers:{
+            
+            'Content-Type': 'multipart/form-data',
+            
+          }
+        })
+        .then(res => {
+          let result = res.data.Result[0]
+          console.log(result.label)
+          switch(result.label){
+            case "First Degree":
+              navigation.navigate("Burn1")
+              break;
+            case "Second Degree":
+              navigation.navigate("Burn2")
+              break;
+            default :
+              navigation.navigate("Burn3")
+          }
+       
+        })
+        .catch(err => console.log(JSON.stringify(err)))
+   
 
+      });
+    }
 
   
  
@@ -236,7 +319,7 @@ export default function Home({LearningState , navigation , rando}){
               </View>
 
               <View style={{ width: "100%", flexDirection: "row", marginTop: 10, justifyContent: "space-around", alignItems: "center" }}>
-                <TouchableOpacity onPress={() => navigation.navigate(LearningState ? "Burnlearn" : "Home")} style={{ height: 130, width: "45%", backgroundColor: "#fff", borderWidth: .5, justifyContent: "center", alignItems: "center" }}>
+                <TouchableOpacity onPress={() => LearningState ? navigation.navigate( "Burnlearn" ) :  BurnsHandler()} style={{ height: 130, width: "45%", backgroundColor: "#fff", borderWidth: .5, justifyContent: "center", alignItems: "center" }}>
                   <Image source={require("../images/الحروق.png")} style={{ height: 80, width: 80, borderRadius: 50 }}></Image>
                   <Text style={{ color: "#000", fontSize: 14, fontWeight: "bold", marginRight: 20 }}>الحروق   </Text>
                 </TouchableOpacity>

@@ -19,7 +19,7 @@ export default function SpeakerComponent({Custom_ref , styles}){
           return
         }
 
-        console.log()
+     
         var text = innerText(Custom_ref.current._internalFiberInstanceHandleDEV.memoizedProps.children)
         .split(" ").
         filter(el => !el.match("www")).

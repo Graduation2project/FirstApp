@@ -1,6 +1,6 @@
 ////////////////sign up/////
 import * as React from 'react'
-import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar, TextInput, TouchableOpacity  } from 'react-native'
+import { Text, StyleSheet, View, Image, ScrollView, ImageBackground, StatusBar , TextInput, TouchableOpacity  } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import axios from 'axios'
 import baseUrl from '../my_axios'
@@ -130,7 +130,7 @@ export default class SignUp extends React.Component {
 
           <View style={{ padding: 10 }}>
             <Text style={{fontWeight:"bold"}}>كلمةالمرور</Text>
-            <TextInput
+            <TextInput secureTextEntry={true}
               value={this.state.كلمةالمرور}
               onChangeText={value => {
                 this.setState({

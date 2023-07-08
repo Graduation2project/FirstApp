@@ -26,7 +26,7 @@ export default function App () {
 
 
     <NavigationContainer>
-      <AuthStack.Navigator initialRouteName='Login'>
+      <AuthStack.Navigator initialRouteName='rest'>
         
       <AuthStack.Screen options={{headerShown:false}} name='rest' component={DownBar} />
         <AuthStack.Screen  name='Login' component={Signin} />

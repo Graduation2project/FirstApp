@@ -90,6 +90,7 @@ export default function SignIn ({navigation}){
           <View style={{ padding: 10 }}>
             <Text style={{fontWeight:"bold"}}>كلمةالمرور</Text>
             <TextInput
+            secureTextEntry={true}
               value={pass}
               onChangeText={value => {
                 setPass(value)

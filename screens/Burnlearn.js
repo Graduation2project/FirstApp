@@ -58,12 +58,14 @@ export default class Burnlearn extends React.Component {
 
               <Text style={styles.titel}>اجراءات حروق الدرجه الثالثه :-</Text>
               <Text style={styles.text}>.حالة الحرق حرجه عليك التوجه الى  مستشفى الحروق </Text>
-              <Text style={{marginTop: '5%',
+              <Text onPress={() => {Linking.openURL("https://youtu.be/HaC2oiBB7sI")}} style={{marginTop: '5%',
               transform:[{
                 translateX:80
               },{translateY:-4}],
               marginBottom:"20%"
               ,fontSize: 12,marginRight: 20,color: '#159da9' }}>https://youtu.be/HaC2oiBB7sI </Text>
+
+
               {/* <Image source={require("../images/image4.png")} style={{ height: 130, width:230,alignSelf:"center",opacity:.8}}/> */}
             </ScrollView>
           </View>

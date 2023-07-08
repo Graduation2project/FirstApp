@@ -111,13 +111,13 @@ def reactNativeArchitectures() {
 android {
     ndkVersion rootProject.ext.ndkVersion
 
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     namespace 'com.mahmoudv2017.AwesomeProject'
     defaultConfig {
         applicationId 'com.mahmoudv2017.AwesomeProject'
         minSdkVersion 23
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0.0"
     }

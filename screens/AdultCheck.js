@@ -49,7 +49,7 @@ export default class AdultCheck extends React.Component {
          
 
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-              <Text style={styles.titel}>*افحص العلامات الحيوية :-</Text>
+              <Text style={styles.titel}>افحص العلامات الحيوية </Text>
               <SpeakerComponent Custom_ref={this.callref} />
             </View>
 

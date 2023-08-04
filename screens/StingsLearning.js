@@ -53,7 +53,7 @@ export default class StingsLearning extends React.Component {
               <Text onPress={() => {Linking.openURL("https://www.youtube.com/watch?v=EPX1eXbHNdc")}} style={{fontSize:12,fontWeight:"bold",color:"#159da9",marginTop:"8%"}}>https://www.youtube.com/watch?v=EPX1eXbHNdc</Text>
 
 
-               <Text style={styles.titel}>كيفية التعامل مع لدغة النحلة:-</Text>
+               <Text style={styles.titel}>كيفية التعامل مع لدغة النحلة</Text>
 
                <Image source={require("../images/bean.png")} style={{ height: 50, width:50}}/>             
                <Text style={{color:"black",fontSize:16,marginRight:20}}>.ازالة الكيس مكان اللدغة ببطاقة</Text>            

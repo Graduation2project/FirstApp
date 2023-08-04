@@ -41,7 +41,7 @@ export default function Foot () {
 
 
               <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-                <Text style={styles.titel}>* الكسر في الاطراف كالذراع والقدم :-</Text>
+                <Text style={styles.titel}> الكسر في الاطراف كالذراع والقدم </Text>
                 <SpeakerComponent Custom_ref={callref}  />
               </View>
 

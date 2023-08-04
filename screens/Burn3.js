@@ -46,7 +46,7 @@ export default class Burn3 extends React.Component {
 
             
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-              <Text style={styles.titel}>*اجراءات حروق الدرجه الثالثة:-</Text>
+              <Text style={styles.titel}>اجراءات حروق الدرجه الثالثة:</Text>
               <FontAwesome5 name='volume-up'
                 size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
           </View>
@@ -55,7 +55,9 @@ export default class Burn3 extends React.Component {
               مستشفى الحروق</Text>
               <Image source={require("../images/warning-sign.png")} style={{ height: 25, width: 30,alignSelf:"center"}}/>
             </View>
+          <TouchableOpacity onPress={() => Linking.openURL(PhoneNumbers.Burning)}>
           <Image source={require("../images/image6.png")} style={{ height: 220, width: 220,alignSelf:"center",marginTop:50}}/>
+            </TouchableOpacity>
             </ScrollView>
           </View>
 

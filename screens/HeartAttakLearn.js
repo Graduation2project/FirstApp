@@ -42,7 +42,7 @@ export default class HeartAttakLearn extends React.Component {
             <ScrollView>
 
 
-            <Text style={styles.titel}>الازمه القلبيه :-</Text>
+            <Text style={styles.titel}>الازمه القلبيه </Text>
               <Text style={styles.text}>.قد يعانى الشخص من الم مستمر فى الصدر او فى الرقبه او الظهر ويحدث هذا بسبب انسداد تدفق الدم الى عضلة القلب ولن يخف هذا الالم مع الراحه </Text>
 
               <Text style={styles.text}>.قم بالاتصال بالاسعافات اذا كان الشخص يعانى من هذه الالام  لان الازمه القلبيه قد تكون خطيرة للغايه </Text>

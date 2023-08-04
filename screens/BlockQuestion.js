@@ -115,7 +115,7 @@ export default class BlockQuestion extends React.Component {
             }}>
 
               <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
-              <Text style={{fontSize:20}}>اختر العمر المناسب للمريض:-</Text>
+              <Text style={{fontSize:20}}>اختر العمر المناسب للمريض</Text>
               <View style={{width:"100%",flexDirection:"row",marginTop:"3%",justifyContent:"space-around"}}>
 
               <TouchableOpacity onPress={() => {this.props.navigation.navigate("BlockChild")}} style={{width:"25%",alignItems:'center',justifyContent:'center'}}>

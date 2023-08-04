@@ -44,7 +44,7 @@ export default class ChildPulseYes extends React.Component {
          
 
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-              <Text style={styles.titel}>*الاجراءات :-</Text>
+              <Text style={styles.titel}>الاجراءات </Text>
               <SpeakerComponent Custom_ref={this.callref} />
             </View>
 

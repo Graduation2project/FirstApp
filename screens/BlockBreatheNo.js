@@ -38,7 +38,7 @@ export default function BlockBreatheNo ({navigation}){
          
 
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-              <Text style={styles.titel}>*الاجراءات :-</Text>
+              <Text style={styles.titel}>الاجراءات-</Text>
               <FontAwesome5 name='volume-up'
                 size={30} style={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
             </View>

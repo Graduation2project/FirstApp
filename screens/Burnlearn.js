@@ -44,19 +44,19 @@ export default class Burnlearn extends React.Component {
             <ScrollView>
 
 
-            <Text style={styles.titel}>اجراءات حروق الدرجه الاولى :-</Text>
+            <Text style={styles.titel}>اجراءات حروق الدرجه الاولى </Text>
               <Text style={styles.text}>.ضع الجزء المصاب في تيار  ماء جاري  لمده 10الي 15دقيقه  </Text>
               <Text style={styles.text}>.قم بوضع مرهم مضاد للحروق</Text>
               <Text style={styles.text}>.ضع شاش طبى على المنطقه</Text>
               <Image source={require("../images/msg950968557-4265.jpg")} style={{ height: 130, width:230,alignSelf:"center",opacity:.8}}/>
 
-              <Text style={styles.titel}>اجراءات حروق الدرجه الثانيه :-</Text>
+              <Text style={styles.titel}>اجراءات حروق الدرجه الثانيه </Text>
               <Text style={styles.text}>.ضع الجزء المصاب في تيار  ماء جاري  لمده 10الي 15دقيقه  </Text>
               <Text style={styles.text}>.ضع شاش طبي علي المنطقه المصابه ثم قم بالتوجهه الي المستشفي </Text>
               <Text style={styles.text}>.لا تقم بلمس الفقعات علي الجزء المصاب  </Text>
               <Image source={require("../images/image45.png")} style={{ height: 130, width:230,alignSelf:"center",opacity:.8}}/>
 
-              <Text style={styles.titel}>اجراءات حروق الدرجه الثالثه :-</Text>
+              <Text style={styles.titel}>اجراءات حروق الدرجه الثالثه </Text>
               <Text style={styles.text}>.حالة الحرق حرجه عليك التوجه الى  مستشفى الحروق </Text>
               <Text style={{marginTop: '5%',
               transform:[{

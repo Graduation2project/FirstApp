@@ -44,7 +44,7 @@ export default class BiresLearning extends React.Component {
           
           }}>
             <ScrollView>
-             <Text style={styles.titel}>كيفية التعامل مع عضة الكلب:-</Text>
+             <Text style={styles.titel}>كيفية التعامل مع عضة الكلب</Text>
               <Image source={require("../images/dog.png")} style={{ height: 50, width:50}}/>
               <Text style={{color:"black",fontSize:16,marginRight:20}}>.التوجه الى المستشفى لتنظيف الجرح</Text>         
               <Text style={styles.text}>.أخذ المصل المضاد لعضة الكلب</Text>

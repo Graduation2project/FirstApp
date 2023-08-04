@@ -43,7 +43,7 @@ export default function Vertebral () {
 
             
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-                <Text style={styles.titel}>*كسر الرقبه و العمود الفقري:-</Text>
+                <Text style={styles.titel}>كسر الرقبه و العمود الفقري</Text>
               <SpeakerComponent Custom_ref={callref} />
           </View>
             <Text style={styles.text}>.لا يجب تحريك المصاب الا من قبل رجال الاسعاف   </Text>  

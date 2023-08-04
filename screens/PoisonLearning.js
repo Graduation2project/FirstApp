@@ -43,17 +43,17 @@ export default class PoisonLearning extends React.Component {
           }}>
             <ScrollView>
            
-          <Text style={styles.titel}>تسمم الغاز:-</Text>   
+          <Text style={styles.titel}>تسمم الغاز</Text>   
             <Text style={styles.text}>.قم بفحص الشخص</Text>
             <Text style={styles.text}>.قم بفحص العلامات الحيوية</Text>
             <Text style={styles.text}>.قم بطلب الاسعاف</Text>
 
-            <Text style={styles.titel}>تسمم الطعام:-</Text>
+            <Text style={styles.titel}>تسمم الطعام</Text>
               <Text style={styles.text}>.عدم جعله يتقيأ</Text>
               <Text  style={styles.text}>.قم بالاتصال بمركز السموم</Text>
               <Text onPress={() => Linking.openURL("https://www.youtube.com/watch?v=KEfLi97i_mI")} style={{color:"#159da9",fontSize:12,fontWeight:"bold",marginTop:"8%"}}>https://www.youtube.com/watch?v=KEfLi97i_mI</Text>
 
-            <Text style={styles.titel}>التسمم بسبب بلع قرص غلة:-</Text>
+            <Text style={styles.titel}>التسمم بسبب بلع قرص غلة</Text>
               <Text style={styles.text}>.قم بالاتصال بمركز السموم</Text>
               <Text  style={[styles.text , {marginBottom:"20%"}]}>.أخذ اربع زجاجات من زيت البارافين</Text>
               

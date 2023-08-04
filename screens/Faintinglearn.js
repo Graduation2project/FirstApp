@@ -43,7 +43,7 @@ export default class Faintinglearn extends React.Component {
             <ScrollView>
 
 
-              <Text style={styles.titel}> قم اولا بفحص درجه الوعي:-</Text>
+              <Text style={styles.titel}> قم اولا بفحص درجه الوعي:</Text>
               <Text style={styles.text}> اذا  كان المريض يقظ ولكن يشعر بالدوران:</Text>
               <Text style={styles.text}>.و يستجيب للكلام </Text>
               <Text style={styles.text}>.و يستجيب للوخز </Text>
@@ -73,7 +73,7 @@ export default class Faintinglearn extends React.Component {
               <Text style={styles.text}>.فحص مجرى التنفس</Text>
               <Image source={require("../images/image2.png")} style={{ height: 130, width: 230,resizeMode:"contain" , resizeMode:"contain" , alignSelf: "center", opacity: .8 }} />
 
-              <Text style={styles.titel}> طريقه فحص العلامات الحيوية للاطفال :-</Text>
+              <Text style={styles.titel}> طريقه فحص العلامات الحيوية للاطفال </Text>
               <Text style={styles.text}>.فحص النبض من الشريان العضدي</Text>
                <Image source={require("../images/image4.png")} style={{ height: 130, width: 230,resizeMode:"contain" , alignSelf: "center", opacity: .8 }} /> 
               <Text style={styles.text}>.فحص مجرى الهواء</Text>
@@ -81,26 +81,26 @@ export default class Faintinglearn extends React.Component {
                <Image source={require("../images/image5.png")} style={{ height: 130, width: 230,resizeMode:"contain" , alignSelf: "center", opacity: .8 }} /> 
               <Text onPress={() => {Linking.openURL("https://www.youtube.com/watch?v=IDMQZ4Ap9xo")}} style={{ marginTop: '15%', fontSize: 12, marginRight: 20, color: '#159da9' }}>https://www.youtube.com/watch?v=IDMQZ4Ap9xo</Text>
 
-              <Text style={styles.titel}> في حاله وجود نبض للمريض البالغ  :-</Text>
+              <Text style={styles.titel}> في حاله وجود نبض للمريض البالغ  </Text>
               <Text style={styles.text}>.عدم اعطائه اى سوائل </Text>
               <Text style={styles.text}>.قم بطلب الاسعاف</Text>
               <Text style={styles.text}>.ضعه فى وضع الافاقة</Text>
                <Image source={require("../images/img.png")} style={{ height: 130, width: 230,resizeMode:"contain" , alignSelf: "center", opacity: .8 }} /> 
               <Text style={styles.text}>.قم باعطائه اى شىء به سكر وضع اصبعك فوق لسانه لتجنب البلع</Text>
 
-              <Text style={styles.titel}> في حاله وجود نبض للطفل  :-</Text>
+              <Text style={styles.titel}> في حاله وجود نبض للطفل  </Text>
               <Text style={styles.text}>.قم باعطاء الطفل اى شىء به سكر وتجنب  ان يقوم ببلعه </Text>
               <Text style={styles.text}>.قم باعطائه نفس الشىء مرة اخرى  بعد دقيقتين</Text>
 
-              <Text style={styles.titel}> في حاله استمرار النبض مع التنفس للطفل   :-</Text>
+              <Text style={styles.titel}> في حاله استمرار النبض مع التنفس للطفل  </Text>
               <Text style={styles.text}>.قم باعطائه  المزيد من السكر او السوائل </Text>
               <Text style={styles.text}>.راجع طبيبك المعالج </Text>
 
-              <Text style={styles.titel}>في انقطاع التنفس للطفل   :-</Text>
+              <Text style={styles.titel}>في انقطاع التنفس للطفل   </Text>
               <Text style={styles.text}>.قم بوضع كحول عند الانف </Text>
               <Text style={styles.text}>.اذا تم افاقته راقبه وقم بمراجعه الطبيب</Text>
 
-              <Text style={styles.titel}>في حاله عدم وجود نبض للطفل او البالغ يتبع اجراءات انعاش القلب الرئوي    :-</Text>
+              <Text style={styles.titel}>في حاله عدم وجود نبض للطفل او البالغ يتبع اجراءات انعاش القلب الرئوي    </Text>
               <Text style={styles.titel}> كيفية عمل انعاش القلب الرئوى للبالغين:-</Text>
               <Text style={styles.text}>. قم بوضع كف يدك بالتشابك  مع يدك  الاخري في منتصف صدر المريض قم بعمل 30 ضغطه كما هو موضح</Text>
               <Image source={require("../images/msg950968557-4267.jpg")} style={{ height: 130, width: 230,resizeMode:"contain" , alignSelf: "center", opacity: .8 }} />
@@ -110,7 +110,7 @@ export default class Faintinglearn extends React.Component {
               <Text style={styles.text}>.او حتي وصول المسعفين  </Text>
               <Text onPress={() => {Linking.openURL("https://www.youtube.com/watch?v=BvdwbjPQqpk")}} style={{ marginTop: '15%', fontSize: 12, marginRight: 20, color: '#159da9' }}>https://www.youtube.com/watch?v=BvdwbjPQqpk</Text>
 
-              <Text style={styles.titel}>كيفية عمل انعاش القلب الرئوى للاطفال  :-</Text>
+              <Text style={styles.titel}>كيفية عمل انعاش القلب الرئوى للاطفال  </Text>
               <Text style={styles.text}>.قم باستخدام يديك الاقوي ثم قم بالضغط في منتصف صدر الطفل 30 ضغطه  </Text>
               <Image source={require("../images/image8.png")} style={{ height: 130, width: 230,resizeMode:"contain" , alignSelf: "center", opacity: .8 }} />
               <Text style={styles.text}>.م بالتنفس الصناعي للطفل مرتين في مده لاتتجاوز 10ثواني بعدكل 30 ضغطه  </Text>
@@ -119,7 +119,7 @@ export default class Faintinglearn extends React.Component {
               <Text style={styles.text}>.او حتي وصول المسعفين  </Text>
 
 
-              <Text style={styles.titel}>كيفية عمل انعاش القلب الرئوى للرضع   :-</Text>
+              <Text style={styles.titel}>كيفية عمل انعاش القلب الرئوى للرضع   </Text>
               <Text style={styles.text}>.قم باستخدام اصبعي الابهام ثم قم بالضغط في منتصف الصدر  الرضيع 30 ضغطه بشكل سريع </Text>
               <Image source={require("../images/image11.png")} style={{ height: 130, width: 230,resizeMode:"contain" , alignSelf: "center", opacity: .8 }} />
               <Text style={styles.text}>.قم بالتنفس الصناعي للرضيع مرتين في مده لاتتجاوز 10ثواني بعدكل 15 ضغطه </Text>

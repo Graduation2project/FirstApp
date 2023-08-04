@@ -118,7 +118,7 @@ export default class FractionQuestion extends React.Component {
             }}>
 
              <SpeakerComponent Custom_ref={this.callref}  styles={{ color: '#fff',alignSelf:"flex-start",paddingHorizontal:"5%" }} />
-              <Text style={{fontSize:20}}>قم بتعيين مكان الكسر:-</Text>
+              <Text style={{fontSize:20}}>قم بتعيين مكان الكسر:</Text>
               <View style={{width:"100%",flexDirection:"row",marginTop:"3%",justifyContent:"space-around"}}>
 
                <TouchableOpacity onPress={()=> this.props.navigation.navigate("Foot")} style={{width:"25%",alignItems:'center',justifyContent:'center'}}>

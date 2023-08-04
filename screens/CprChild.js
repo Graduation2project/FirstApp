@@ -78,7 +78,7 @@ export default function CprChild ({navigation}) {
          
          <ScrollView ref={speakerRef}>
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-              <Text style={styles.titel}>*الاجراءات :-</Text>
+              <Text style={styles.titel}>الاجراءات </Text>
               <SpeakerComponent Custom_ref={speakerRef} />
             </View>
               

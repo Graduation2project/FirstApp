@@ -44,7 +44,7 @@ export default class BlockChild extends React.Component {
          
 
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-              <Text style={styles.titel}>*الاجراءات :-</Text>
+              <Text style={styles.titel}>الاجراءات </Text>
               <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
             </View>
 

@@ -61,7 +61,7 @@ export default class BlockLearning extends React.Component {
                 <Text onPress={() => {Linking.openURL("https://youtu.be/81BXd2Gi6kg")}} style={{fontSize:12,fontWeight:"bold",color:"#159da9",marginTop:"8%"}}>https://youtu.be/81BXd2Gi6kg</Text>
 
 
-            <Text style={styles.titel}>كيفية انقاذ الأطفال:-</Text>
+            <Text style={styles.titel}>كيفية انقاذ الأطفال</Text>
               <Image source={require("../images/image10.png")} style={{ height: 140, width:200,alignSelf:"center",marginTop:"20%",opacity:.8}}/>
               <Text style={styles.text}>.يتم وضع الطفل على يدك اليسرى ورأسه مائلة الى الأسفل</Text>
               <Text style={{color:"black",fontSize:16}}>       وقم بوضع اصابعك على خد الرضيع حتى لا يسقط</Text>

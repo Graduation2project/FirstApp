@@ -51,7 +51,7 @@ export default class FractionsLearn extends React.Component {
       
             <View ref={this.callref}>
             <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
-             <Text  style={styles.titel}>*الكسر في الاصابع :-</Text>
+             <Text  style={styles.titel}>الكسر في الاصابع </Text>
               <SpeakerComponent Custom_ref={this.callref} styles={{ color: '#159da9', marginTop: 35, marginLeft: 20 }} />
           </View>
             <Text style={styles.text}>.اذا كان المريض يعاني من: </Text>
